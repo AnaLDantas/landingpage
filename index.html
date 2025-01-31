@@ -14,7 +14,7 @@
   <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
-  <header data-aos="fade-down" data-aos-duration="1000">
+  <header id="main-header" data-aos="fade-down" data-aos-duration="1000">
     <img src="images/gov365-logo.webp" alt="Logo GOV365" class="logo" loading="lazy">
     <nav aria-label="Navegação principal">
       <a href="#about-gov365">Sobre o GOV365</a>
@@ -26,7 +26,36 @@
       <a href="login.html" class="btn-login">Portal</a>
     </div>
   </header>
+
+  <script>
+    window.addEventListener("load", function() {
+      const header = document.querySelector("header");
+      const hero = document.querySelector(".hero");
   
+      if (header && hero) {
+        // Função para calcular a altura do header e aplicar o padding-top na hero
+        const adjustHeroPadding = () => {
+          const headerHeight = header.offsetHeight;
+          hero.style.paddingTop = `${headerHeight}px`;
+        };
+  
+        // Ajusta o padding-top inicialmente
+        adjustHeroPadding();
+  
+        // Observa mudanças no DOM para recalcular a altura do header, se necessário
+        const observer = new MutationObserver(adjustHeroPadding);
+        observer.observe(header, {
+          attributes: true, // Observa mudanças nos atributos
+          childList: true, // Observa mudanças nos filhos
+          subtree: true, // Observa mudanças em toda a subárvore
+        });
+  
+        // Recalcula a altura do header após a animação da biblioteca AOS
+        setTimeout(adjustHeroPadding, 500); // 500ms de atraso
+      }
+    });
+  </script>
+
   <div class="hero" data-aos="fade-up" data-aos-duration="1000">
     <div class="hero-content">
       <h1 data-aos="fade-right" data-aos-delay="200">Transforme a Administração Pública com Tecnologia de Ponta</h1>
@@ -34,6 +63,10 @@
       <a href="contato.html" class="btn-primary" data-aos="zoom-in" data-aos-delay="600">Fale Conosco</a>
     </div>
   </div>
+
+  <!-- Restante do seu HTML -->
+</body>
+</html>
   
   <section id="about-gov365" class="about-product" aria-labelledby="sobre-produto-titulo" data-aos="fade-up" data-aos-duration="1000">
     <div class="about-content">

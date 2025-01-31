@@ -52,6 +52,7 @@ header {
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 4px var(--color-shadow);
+  top: 0;
 }
 
 .logo {
@@ -125,6 +126,10 @@ a:hover {
   color: var(--color-background);
   padding: var(--spacing-large) 32px 80px;
   text-align: center;
+  padding-top: calc(var(--spacing-small) * 2 + 150px);
+  padding-top: 100px; /* Valor inicial estimado */
+  position: relative;
+  z-index: 999; /* Menor que o z-index do header */
 }
 
 .hero-content {
@@ -445,8 +450,8 @@ a:hover {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); /* Azul escuro */
-  color: var(--color-background); /* Branco */
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-background);
   padding: var(--spacing-medium) 32px;
   text-align: left;
 }
@@ -478,12 +483,12 @@ footer {
 }
 
 .footer-right .contact-info a {
-  color: var(--color-background); /* Branco */
+  color: var(--color-background);
   text-decoration: none;
   font-size: var(--font-size-small);
   display: flex;
   align-items: center;
-  gap: 8px; /* Espaço entre ícone e texto */
+  gap: 8px;
   transition: opacity 0.3s;
 }
 
@@ -493,12 +498,7 @@ footer {
 
 /* Ícones */
 .fab, .fas {
-  font-size: 1.2em; /* Tamanho dos ícones */
-}
-
-/* Ícones */
-.fab, .fas {
-  font-size: 1.2em; /* Tamanho dos ícones */
+  font-size: 1.2em;
 }
 
 /* Acessibilidade */
@@ -515,12 +515,96 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .features-grid, .benefits-grid, .architecture-grid {
+  header {
+    padding: var(--spacing-small) 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    max-width: 120px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: var(--spacing-small);
+  }
+
+  .auth-buttons {
+    margin-right: 0;
+    margin-top: var(--spacing-small);
+  }
+
+  .auth-buttons a {
+    padding: 8px 16px;
+  }
+
+  .hero {
+    padding: var(--spacing-medium) 16px 60px;
+  }
+
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 1.2em;
+  }
+
+  .hero a {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  .about-product, .benefits, .exclusive-features, .architecture {
+    padding: var(--spacing-medium) 16px;
+  }
+
+  .benefits-grid, .features-grid, .architecture-grid {
     flex-direction: column;
   }
 
-  .feature-card, .benefit-card, .architecture-card {
+  .benefit-card, .feature-card, .architecture-card {
     flex: 1 1 100%;
     margin-bottom: var(--spacing-small);
+  }
+
+  .about-content h2, .benefits-content h2, .exclusive-features-content h2, .architecture-content h2 {
+    font-size: 2em;
+  }
+
+  .about-content .intro-text, .benefits-content .intro-text, .exclusive-features-content .intro-text, .architecture-content .intro-text {
+    font-size: 1.2em;
+  }
+
+  footer {
+    padding: var(--spacing-medium) 16px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-small);
+  }
+
+  .footer-right .contact-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-large: 2em;
+    --font-size-medium: 1.2em;
+    --font-size-small: 0.9em;
+    --spacing-large: 40px;
+    --spacing-medium: 20px;
+    --spacing-small: 10px;
+  }
+
+  body {
+    font-size: 14px;
   }
 }
