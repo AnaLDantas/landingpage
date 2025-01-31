@@ -445,10 +445,60 @@ a:hover {
 
 /* Footer */
 footer {
-  background-color: var(--color-secondary);
-  color: var(--color-background);
-  padding: var(--spacing-small);
-  text-align: center;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); /* Azul escuro */
+  color: var(--color-background); /* Branco */
+  padding: var(--spacing-medium) 32px;
+  text-align: left;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left p {
+  margin: 0;
+  font-size: var(--font-size-small);
+}
+
+.footer-right .contact-info {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--spacing-medium);
+}
+
+.footer-right .contact-info li {
+  display: flex;
+  align-items: center;
+}
+
+.footer-right .contact-info a {
+  color: var(--color-background); /* Branco */
+  text-decoration: none;
+  font-size: var(--font-size-small);
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre ícone e texto */
+  transition: opacity 0.3s;
+}
+
+.footer-right .contact-info a:hover {
+  opacity: 0.8;
+}
+
+/* Ícones */
+.fab, .fas {
+  font-size: 1.2em; /* Tamanho dos ícones */
+}
+
+/* Ícones */
+.fab, .fas {
+  font-size: 1.2em; /* Tamanho dos ícones */
 }
 
 /* Acessibilidade */
