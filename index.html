@@ -10,10 +10,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Biblioteca AOS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
   <header data-aos="fade-down" data-aos-duration="1000">
-    <img src="images/gov365-logo.webp" alt="Logo GOV365" class="logo">
+    <img src="images/gov365-logo.webp" alt="Logo GOV365" class="logo" loading="lazy">
     <nav aria-label="Navegação principal">
       <a href="#about-gov365">Sobre o GOV365</a>
       <a href="#architecture-tecnology">Arquitetura & Tecnologias</a>
@@ -21,8 +22,7 @@
       <a href="#benefits">Benefícios</a>
     </nav>
     <div class="auth-buttons">
-      <a href="login.html" class="btn-login">Login</a>
-      <a href="cadastro.html" class="btn-primary">Cadastre-se</a>
+      <a href="login.html" class="btn-login">Portal</a>
     </div>
   </header>
   
@@ -37,7 +37,7 @@
   <section id="about-gov365" class="about-product" aria-labelledby="sobre-produto-titulo" data-aos="fade-up" data-aos-duration="1000">
     <div class="about-content">
       <h2 id="sobre-produto-titulo" data-aos="fade-right">Sobre o GOV365</h2>
-      <p class="intro-text" data-aos="fade-left" data-aos-delay="200">
+      <p class="intro-text" data-aos="fade-left" data-aos-delay="100">
         Pioneiro e único no mercado, o <strong>GOV365</strong> foi desenvolvido pela <strong>Mundo365</strong> com o objetivo de revolucionar a forma como prefeituras e órgãos públicos gerenciam suas licitações e atividades correlatas.
       </p>
       <p>
@@ -75,7 +75,7 @@
         <div class="architecture-card" data-aos="fade-up" data-aos-delay="400">
           <h3>Backend: O Núcleo Lógico do Software</h3>
           <ul>
-            <li><strong>C# e Python:</strong> C# para funcionalidades centrais e integrações complexas; Python para análise de dados e algoritmos de IA.</li>
+            <li><strong>Linguagem de Última geração:</strong> C# para funcionalidades centrais e integrações complexas; Python para análise de dados e algoritmos de IA.</li>
             <li><strong>Busca Vetorial para Embeddings:</strong> Análise semântica avançada e escalabilidade no processamento de dados.</li>
             <li><strong>Armazenamento de Metadados e Acessos:</strong> Rastreabilidade completa e gerenciamento de permissões.</li>
           </ul>
@@ -134,7 +134,7 @@
         </div>
       </div>
   
-      <div class="why-advantage" data-aos="fade-up" data-aos-delay="800">
+      <div class="why-advantage" data-aos="fade-up" data-aos-delay="700">
         <h3>Por que isso é vantajoso?</h3>
         <ul>
           <li>Menos retrabalho: As sugestões automáticas reduzem falhas humanas.</li>
@@ -196,7 +196,7 @@
         </div>
       </div>
   
-      <div class="ia-difference" data-aos="fade-up" data-aos-delay="1000">
+      <div class="ia-difference" data-aos="fade-up" data-aos-delay="900">
         <h3>Por que a IA faz toda a diferença?</h3>
         <p>
           O GOV365 foi desenvolvido para ser muito mais do que um simples software de automação. A inteligência artificial embutida em seu núcleo permite analisar grandes quantidades de dados em segundos, emitir alertas preditivos e fornecer recomendações que antecipam problemas, transformando tarefas corriqueiras em processos ágeis e efetivos.
